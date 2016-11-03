@@ -48,6 +48,7 @@ angular.module('services.module')
 		}
 	},{
 	  	'title': 'Trends',
+	  	'showEndDate': true,
 		'dataSource': function (dates) {
 			return txnService.getTrends(dates[0], dates[1]);
 		}

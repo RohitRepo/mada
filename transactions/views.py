@@ -33,9 +33,9 @@ def get_trends(request, day_start, day_end, format=None):
 		day_start_date = datetime.strptime(day_start, "%Y-%m-%d").date()
 		day_end_date = datetime.strptime(day_end, "%Y-%m-%d").date()
 
-		row_started = Started.objects.filter(dated__range=(day_start_date, day_end_date))
-		row_completed = Completed.objects.filter(dated__range=(day_start_date, day_end_date))
-		row_completed_drop = CompletedDrop.objects.filter(dated__range=(day_start_date, day_end_date))
+		row_started = Started.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
+		row_completed = Completed.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
+		row_completed_drop = CompletedDrop.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
 
 		all_model = All(started=row_started, completed=row_completed, completed_drop=row_completed_drop)
 		serializer = TrendsSerializer(all_model)

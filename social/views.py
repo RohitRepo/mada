@@ -34,10 +34,10 @@ def get_trends(request, day_start, day_end, format=None):
 		day_start_date = datetime.strptime(day_start, "%Y-%m-%d").date()
 		day_end_date = datetime.strptime(day_end, "%Y-%m-%d").date()
 
-		row_likes = Likes.objects.filter(dated__range=(day_start_date, day_end_date))
-		row_comments = Comments.objects.filter(dated__range=(day_start_date, day_end_date))
-		row_shares = Shares.objects.filter(dated__range=(day_start_date, day_end_date))
-		row_profile_views = ProfileViews.objects.filter(dated__range=(day_start_date, day_end_date))
+		row_likes = Likes.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
+		row_comments = Comments.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
+		row_shares = Shares.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
+		row_profile_views = ProfileViews.objects.filter(dated__range=(day_start_date, day_end_date)).order_by('-dated')
 
 		all_model = All(likes=row_likes, comments=row_comments,shares=row_shares, profile_views=row_profile_views)
 		serializer = TrendsSerializer(all_model)
