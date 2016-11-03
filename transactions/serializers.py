@@ -29,3 +29,27 @@ class AllSerializer(serializers.Serializer):
 	started = StartedSerializer()
 	completed = CompletedSerializer()
 	completed_drop = CompletedDropSerializer()
+
+class StartedTrendSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Started
+        fields = ('nu', 'nu_total', 'nu_compare','dau', 'dau_total', 'dau_compare', 'dated')
+
+class CompletedTrendSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Completed
+        fields = ('nu', 'nu_total', 'nu_compare','dau', 'dau_total', 'dau_compare', 'dated')
+
+
+class CompletedDropTrendSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CompletedDrop
+        fields = ('nu', 'nu_total', 'nu_compare','dau', 'dau_total', 'dau_compare', 'dated')
+
+class TrendsSerializer(serializers.Serializer):
+	started = StartedTrendSerializer(many=True)
+	completed = CompletedTrendSerializer(many=True)
+	completed_drop = CompletedDropTrendSerializer(many=True)

@@ -4,7 +4,18 @@ angular.module('models.module')
 
 	service.getAll = function(date) {
 		date = date.toISOString().substring(0, 10);
-		return $http.get('social/'+ date +'/all').then(function (response) {
+		return $http.get('social/all/'+ date).then(function (response) {
+			return response.data;
+		}, function (response) {
+			return $q.reject(response);
+		});
+	};
+
+	service.getTrends = function(date_start, date_end) {
+		date_start = date_start.toISOString().substring(0, 10);
+		date_end = date_end.toISOString().substring(0, 10);
+
+		return $http.get('social/trends/'+ date_start + '/' + date_end).then(function (response) {
 			return response.data;
 		}, function (response) {
 			return $q.reject(response);

@@ -1,0 +1,11 @@
+<md-whiteframe class="md-whiteframe-1dp cd-data" layout="column" flex="44" layout-align="center center" layout-padding>
+    <span layout-fill class="cd-data-header" layout-padding><span class="cd-data-header-title">{{item.title}}</span></span>
+    <div layout="row" class="cd-data-holder" layout-align="space-around center" layout-wrap>
+      <div class="cd-data-item" layout="column" layout-align="center center" layout-padding ng-repeat="data in item.data">
+        <span class="cd-data-title" layout-padding>{{data.dated}}</span>
+        <div class="cd-data-total">{{data.total}}</div>
+        <div class="cd-data-value">{{data.value}}<span ng-cloak ng-show="item.percent">%</span></div>
+        <div class="cd-data-compare" ng-class="{'down': data.compare<0, 'up': data.compare>=0}">{{data.compare}}<span ng-cloak ng-show="item.percent">%</span></div>
+      </div>
+    </div>
+</md-whiteframe>

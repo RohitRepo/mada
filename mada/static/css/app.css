@@ -101,6 +101,7 @@ md-toolbar h1 {
     background-color: white;
     padding: 8px;
     margin-bottom: 16px;
+    width: auto;
     /*height: 200px;*/
 }
 
@@ -119,6 +120,11 @@ md-toolbar h1 {
 
 .cd-data .cd-data-holder{
     cursor: pointer;
+    overflow: scroll;
+}
+
+.cd-data .cd-data-holder .cd-data-item{
+    min-width: 120px;
 }
 
 .cd-data .cd-data-title{
@@ -156,4 +162,14 @@ md-toolbar h1 {
     background-color: white;
     min-width: 800px;
     min-height: 500px;
+}
+
+/*----------- Progress ---------------*/
+
+md-progress-linear {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
 }

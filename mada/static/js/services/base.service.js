@@ -12,26 +12,52 @@ angular.module('services.module')
 	    name: 'Social',
 	    avatar: 'svg-1',
 	    content: 'Understand social behavior of user on MagicPin.',
-	    dataSource: socialService.getAll
+	    
 	  },
 	  {
 	    name: 'Transactions',
 	    avatar: 'svg-2',
 	    content: 'Understand when user transacts on MagicPin',
-	    dataSource: txnService.getAll
+	    
 	  },
 	  {
 	    name: 'Notifications',
 	    avatar: 'svg-3',
 	    content: "What are the returns of those notifications that you configured",
-	    dataSource: notificationService.getAll
+	    
 	  }
 	];
 
 	var tabs = [
-	  [{'title': 'All'},],
-	  [{'title': 'All'}, {'title': 'Funnel'}],
-	  [{'title': 'All'}]
+	[{
+	  	'title': 'All',
+		'dataSource': function (dates) {
+			return socialService.getAll(dates[0]);
+		},
+	},{
+	  	'title': 'Trends',
+	  	'showEndDate': true,
+		'dataSource': function (dates) {
+			return socialService.getTrends(dates[0], dates[1]);
+		},
+	},],
+	[{
+	  	'title': 'All',
+		'dataSource': function (dates) {
+			return txnService.getAll(dates[0]);
+		}
+	},{
+	  	'title': 'Trends',
+		'dataSource': function (dates) {
+			return txnService.getTrends(dates[0], dates[1]);
+		}
+	},],
+	[{
+	  	'title': 'All',
+		'dataSource': function (dates) {
+			return notificationService.getAll(dates[0]);
+		}
+	},]
 	]
 
 	service.loadAllSections = function() {
