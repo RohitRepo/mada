@@ -1,0 +1,159 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+    height:100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #EFEBE9;
+    overflow: hidden;
+}
+
+.menu {
+    background-color: transparent;
+    border: none;
+    height: 38px;
+    margin: 16px;
+    width: 36px;
+}
+
+md-toolbar {
+    padding-left: 8px;
+}
+
+md-toolbar h3 {
+    margin: auto;
+    font-weight: 500;
+}
+
+md-toolbar md-datepicker {
+    margin-right: 16px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 16px;
+}
+
+/* Sidenav area */
+md-sidenav {
+    max-width: 280px;
+    /*height: 700px;*/
+}
+
+md-list-item > button {
+    width:100%;
+    text-align:left !important;
+}
+
+md-list-item .md-button {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+md-list .md-button.selected {
+    color: #FF5252;
+}
+
+md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+}
+
+md-button.menuBtn > md-icon {
+    fill:white;
+    width:24px;
+    height:24px;
+}
+
+
+/* Typography support coming in 0.8.0 */
+
+md-toolbar h1 {
+    font-size: 1.250em;
+    font-weight: 400;
+}
+
+.avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px;
+    vertical-align: middle;
+    zoom:0.70;
+    transform: translateZ(0);
+    -webkit-transform: scale(0.70);
+    -moz-transform:scale(0.70);
+}
+
+.all-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
+/*------- Past Data Card ---------*/
+.cd-data {
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 16px;
+    /*height: 200px;*/
+}
+
+.cd-data .cd-data-header{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    background-color: white;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cd-data .cd-data-header-title{
+    font-size: 14px;
+    color: #FF5252;
+}
+
+.cd-data .cd-data-holder{
+    cursor: pointer;
+}
+
+.cd-data .cd-data-title{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.cd-data .cd-data-label{
+    font-size: 12px;
+    line-height: 2em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.cd-data .cd-data-value{
+    font-size: 20px;
+    line-height: 2em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.cd-data .cd-data-compare{
+    font-size: 12px;
+    line-height: 2em;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.cd-data .cd-data-compare.down{
+    color: #e60000;
+}
+
+.cd-data .cd-data-compare.up{
+    color: #008000;
+}
+/*----------- Chart Data Card ---------*/
+.cd-data-chart {
+    background-color: white;
+    min-width: 800px;
+    min-height: 500px;
+}
